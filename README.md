@@ -1,10 +1,32 @@
 <p align="center">
   <img src="https://img.shields.io/badge/Prowlarr-Indexer-blueviolet?style=for-the-badge&logo=prowlarr" alt="Prowlarr Indexer"/>
-  <img src="https://img.shields.io/badge/Version-BETA-orange?style=for-the-badge" alt="Beta Version"/>
+  <img src="https://img.shields.io/badge/Status-ARCHIVED-red?style=for-the-badge" alt="Archived"/>
   <img src="https://img.shields.io/badge/Pavillon-Fran%C3%A7ais-blue?style=for-the-badge" alt="French"/>
 </p>
 
 <h1 align="center">🏴‍☠️ La Cale - Prowlarr Indexer</h1>
+
+---
+
+> [!WARNING]
+> ## 🚨 DÉPÔT ARCHIVÉ - PLUS MAINTENU
+> 
+> **Ce dépôt est désormais archivé et ne recevra plus de mises à jour.**
+> 
+> ### ✅ Bonne nouvelle !
+> L'indexeur pour **La Cale** est maintenant **officiellement disponible** dans :
+> - **[Prowlarr](https://github.com/Prowlarr/Prowlarr)** - Intégré nativement, aucune installation manuelle requise
+> - **[Jackett](https://github.com/Jackett/Jackett)** - Également disponible directement
+> 
+> Mettez simplement à jour Prowlarr ou Jackett vers la dernière version et recherchez "La Cale" dans les indexeurs disponibles.
+> 
+> ### 🙏 Remerciements
+> Un grand merci à tous les contributeurs et utilisateurs qui ont soutenu ce projet :
+> - Aux **contributeurs de Prowlarr et Jackett** qui ont intégré l'indexeur officiellement
+> - À la **communauté La Cale** pour les retours et les tests
+> - À tous ceux qui ont **ouvert des issues**, **proposé des améliorations** et **partagé le projet**
+> 
+> *Fair winds and following seas, moussaillons !* ⚓
 
 ---
 
@@ -95,96 +117,6 @@ sudo systemctl restart prowlarr
 2. 🔎 Cherchez **"La Cale"**
 3. 🔑 Entrez votre **passkey** (trouvable dans votre profil de marin sur la-cale.space)
 4. ✅ Cliquez **Test** puis **Save**
-
----
-
-## 📦 Cargaison
-
-<table>
-<tr><th>📚 Bibliothèque du bord</th><th>🎬 Salle de projection</th><th>📺 Quartier des séries</th></tr>
-<tr><td>
-
-| Cale | Slug |
-|:-----|:-----|
-| Romans | `romans` |
-| BD | `bd` |
-| Documentaires | `documentaires` |
-| Livres | `livres` |
-| Presse | `presse` |
-| Éducation | `education` |
-
-</td><td>
-
-| Cale | Slug |
-|:-----|:-----|
-| Films | `films` |
-| Films HD | `films-hd` |
-| Films 4K | `films-4k` |
-| Animation | `animation` |
-| Spectacles | `spectacles` |
-
-</td><td>
-
-| Cale | Slug |
-|:-----|:-----|
-| Séries TV | `series` |
-| Séries HD | `s-ries-hd` |
-
-</td></tr>
-</table>
-
-<table>
-<tr><th>🎵 Taverne musicale</th><th>🎮 Salle de jeux</th><th>💻 Arsenal logiciel</th></tr>
-<tr><td>
-
-| Cale | Slug |
-|:-----|:-----|
-| Musique | `music` |
-| FLAC | `flac` |
-| MP3 | `mp3` |
-| M4A | `m4a` |
-| Audio divers | `audio-divers` |
-
-</td><td>
-
-| Cale | Slug |
-|:-----|:-----|
-| PC | `pc` |
-| Consoles | `consoles` |
-| Jeux mobiles | `jeux-mobiles` |
-
-</td><td>
-
-| Cale | Slug |
-|:-----|:-----|
-| Systèmes | `systemes` |
-| Logiciels | `software` |
-| Linux | `linux` |
-
-</td></tr>
-</table>
-
-<table>
-<tr><th>🔞 Quartier interdit</th><th>📦 Autres</th></tr>
-<tr><td>
-
-| Cale | Slug |
-|:-----|:-----|
-| XXX | `xxx` |
-| Hétéro | `xxx-hetero` |
-| Gay | `xxx-gay` |
-| Lesbien | `xxx-lesbien` |
-| Trans | `xxx-trans` |
-
-</td><td>
-
-| Cale | Slug |
-|:-----|:-----|
-| Autres | `autres` |
-| Divers | `divers` |
-
-</td></tr>
-</table>
 
 ---
 

@@ -16,8 +16,6 @@ caps:
     # Video (parent + children)
     - {id: video, cat: Movies, desc: 'Vidéo'}
     - {id: films, cat: Movies, desc: 'Films'}
-    - {id: films-4k, cat: Movies/UHD, desc: 'Films 4K'}
-    - {id: films-hd, cat: Movies/HD, desc: 'Films HD'}
     - {id: animation, cat: Movies, desc: 'Animation'}
     - {id: series, cat: TV, desc: 'Séries TV'}
     - {id: s-ries-hd, cat: TV/HD, desc: 'Séries HD'}
@@ -51,10 +49,10 @@ caps:
     - {id: education, cat: Books/Technical, desc: 'Éducation'}
     # XXX (parent + children, default: false)
     - {id: xxx, cat: XXX, desc: 'XXX', default: false}
-    - {id: xxx-hetero, cat: XXX, desc: 'Hétéro', default: false}
-    - {id: xxx-gay, cat: XXX, desc: 'Gay', default: false}
-    - {id: xxx-lesbien, cat: XXX, desc: 'Lesbien', default: false}
-    - {id: xxx-trans, cat: XXX, desc: 'Trans', default: false}
+    - {id: h-t-ro, cat: XXX, desc: 'Hétéro', default: false}
+    - {id: gay, cat: XXX, desc: 'Gay', default: false}
+    - {id: lesbien, cat: XXX, desc: 'Lesbien', default: false}
+    - {id: trans, cat: XXX, desc: 'Trans', default: false}
     # Other (parent + children)
     - {id: autres, cat: Other/Misc, desc: 'Autres'}
     - {id: divers, cat: Other/Misc, desc: 'Divers'}
@@ -76,6 +74,21 @@ settings:
     type: info
     label: About your Passkey
     default: "Your passkey can be found on your <a href=\"https://la-cale.space/profile\" target=\"_blank\">profile page</a>. Never share it!"
+  - name: multilang
+    type: checkbox
+    label: Replace MULTi by another language in release name
+    default: false
+  - name: multilanguage
+    type: select
+    label: Replace MULTi by this language
+    default: FRENCH
+    options:
+      FRENCH: FRENCH
+      MULTi.FRENCH: MULTi.FRENCH
+      ENGLISH: ENGLISH
+      MULTi.ENGLISH: MULTi.ENGLISH
+      VOSTFR: VOSTFR
+      MULTi.VOSTFR: MULTi.VOSTFR
   - name: info_flaresolverr
     type: info_flaresolverr
   - name: info_ratio
@@ -109,8 +122,24 @@ search:
   keywordsfilters:
     - name: trim
     - name: re_replace
-      # Cleans dashes, dots, slashes, exclamation marks and normalizes spaces
-      args: ['[\-\.\/!\s]+', ' ']
+      # Mark CJK so we can detect "CJK-only" queries
+      args: ['[\p{IsHiragana}\p{IsKatakana}\p{IsCJKUnifiedIdeographs}]', '__CJK__']
+    - name: re_replace
+      # If query is only CJK, force no-match
+      args: ['^\s*__CJK__\s*(?:__CJK__\s*)*$', 'nomatch_please_ignore']
+    - name: re_replace
+      # If CJK + year only, force no-match
+      args: ['^\s*__CJK__\s*(?:__CJK__\s*)*(19|20)\d{2}\s*$', 'nomatch_please_ignore']
+    - name: re_replace
+      # If year + CJK only, force no-match
+      args: ['^\s*(19|20)\d{2}\s*__CJK__\s*(?:__CJK__\s*)*$', 'nomatch_please_ignore']
+    - name: re_replace
+      # Remove CJK tokens for mixed queries
+      args: ['\b__CJK__\b', '']
+    - name: re_replace
+      # Normalize multiple spaces after replacements
+      args: ['\s+', ' ']
+    - name: trim
 
   inputs:
     passkey: '{{ .Config.passkey }}'
@@ -125,8 +154,17 @@ search:
   fields:
     _id:
       selector: guid
-    title:
+    title_normal:
       selector: title
+    title_multilang:
+      text: "{{ .Result.title_normal }}"
+      filters:
+        - name: re_replace
+          args: ["(?i)[\\.](MULTI(?!.*(?:FRENCH|ENGLISH|VOSTFR)))[\\.]", ".{{ .Config.multilanguage }}."]
+        - name: re_replace
+          args: ["(?i)\\b(MULTI(?!.*(?:FRENCH|ENGLISH|VOSTFR)))\\b", "{{ .Config.multilanguage }}"]
+    title:
+      text: "{{ if .Config.multilang }}{{ .Result.title_multilang }}{{ else }}{{ .Result.title_normal }}{{ end }}"
     category:
       selector: category
       filters:
@@ -138,9 +176,9 @@ search:
         - name: re_replace
           args: ["(?i)^animations?$", "animation"]
         - name: re_replace
-          args: ["(?i)^films?\\s*4k$", "films-4k"]
+          args: ["(?i)^films?\\s*4k$", "films"]
         - name: re_replace
-          args: ["(?i)^films?\\s*hd$", "films-hd"]
+          args: ["(?i)^films?\\s*hd$", "films"]
         - name: re_replace
           args: ["(?i)^films?$", "films"]
         - name: re_replace
@@ -197,21 +235,21 @@ search:
           args: ["(?i)^e-?books?\\s*[&e]\\s*documents?$", "ebooks-documents"]
         # XXX
         - name: re_replace
-          args: ["(?i)^xxx[\\s-]*h[ée]t[ée]ro$", "xxx-hetero"]
+          args: ["(?i)^xxx[\\s-]*h[ée]t[ée]ro$", "h-t-ro"]
         - name: re_replace
-          args: ["(?i)^xxx[\\s-]*gay$", "xxx-gay"]
+          args: ["(?i)^xxx[\\s-]*gay$", "gay"]
         - name: re_replace
-          args: ["(?i)^xxx[\\s-]*lesbien(ne)?s?$", "xxx-lesbien"]
+          args: ["(?i)^xxx[\\s-]*lesbien(ne)?s?$", "lesbien"]
         - name: re_replace
-          args: ["(?i)^xxx[\\s-]*trans$", "xxx-trans"]
+          args: ["(?i)^xxx[\\s-]*trans$", "trans"]
         - name: re_replace
-          args: ["(?i)^h[ée]t[ée]ro$", "xxx-hetero"]
+          args: ["(?i)^h[ée]t[ée]ro$", "h-t-ro"]
         - name: re_replace
-          args: ["(?i)^gay$", "xxx-gay"]
+          args: ["(?i)^gay$", "gay"]
         - name: re_replace
-          args: ["(?i)^lesbien(ne)?s?$", "xxx-lesbien"]
+          args: ["(?i)^lesbien(ne)?s?$", "lesbien"]
         - name: re_replace
-          args: ["(?i)^trans$", "xxx-trans"]
+          args: ["(?i)^trans$", "trans"]
         - name: re_replace
           args: ["(?i)^xxx$", "xxx"]
         # Other
