@@ -7,6 +7,29 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+## [1.0.0] - 2026-01-07 🚨 FINAL RELEASE
+
+> **⚠️ This repository is now archived. The indexer is officially available in Prowlarr and Jackett.**
+
+### Added
+- 🔤 **CJK Filter**: Filters out CJK-only queries (Japanese, Chinese, Korean) to prevent irrelevant results when Radarr searches with original titles
+- 🌐 **Multilang Option**: New settings to replace "MULTI" in release names with your preferred language (FRENCH, ENGLISH, VOSTFR, MULTi.FRENCH, etc.)
+
+### Changed
+- 🏷️ **Category mappings updated**: Films 4K/HD now map to `films`, XXX subcategories renamed (`h-t-ro`, `gay`, `lesbien`, `trans`)
+- 📝 **README updated**: Added archive notice with thanks to all contributors
+
+### Removed
+- 🗑️ **Categories section removed from README**: Simplified documentation for archived state
+- 🗑️ **films-4k and films-hd categories**: Merged into `films` category
+
+### Thanks
+- 🙏 Thanks to **@micou11** for PR #31 (CJK filter + multilang)
+- 🙏 Thanks to all **Prowlarr and Jackett contributors** for official integration
+- 🙏 Thanks to the **La Cale community** for feedback and testing
+
+---
+
 ## [0.4.0] - 2026-01-04
 
 ### Added

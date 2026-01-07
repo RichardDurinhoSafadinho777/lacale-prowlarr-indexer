@@ -2,6 +2,9 @@
 
 Ahoy, fellow pirate! Thank you for your interest in contributing to La Cale Prowlarr Indexer! 🏴‍☠️
 
+> [!WARNING]
+> **🚨 REPOSITORY ARCHIVED** - This repository is no longer accepting contributions. The indexer is now officially available in [Prowlarr](https://github.com/Prowlarr/Prowlarr) and [Jackett](https://github.com/Jackett/Jackett). Please contribute directly to those projects instead.
+
 ---
 
 ## 📋 Table of Contents

@@ -2,6 +2,9 @@
 
 > Complete guide for developing and maintaining the La Cale Prowlarr Indexer.
 
+> [!WARNING]
+> **🚨 REPOSITORY ARCHIVED** - This repository is no longer maintained. The indexer is now officially available in [Prowlarr](https://github.com/Prowlarr/Prowlarr) and [Jackett](https://github.com/Jackett/Jackett).
+
 ---
 
 ## 📋 Table of Contents
@@ -94,8 +97,6 @@ The API returns a JSON array directly:
 |----------------|------|------------------|
 | Vidéo | `video` | Movies |
 | Films | `films` | Movies |
-| Films HD | `films-hd` | Movies/HD |
-| Films 4K | `films-4k` | Movies/UHD |
 | Animation | `animation` | Movies |
 | Séries TV | `series` | TV |
 | Séries HD | `s-ries-hd` | TV/HD |
@@ -123,10 +124,10 @@ The API returns a JSON array directly:
 | Presse | `presse` | Books/Mags |
 | Éducation | `education` | Books/Technical |
 | XXX | `xxx` | XXX |
-| Hétéro | `xxx-hetero` | XXX |
-| Gay | `xxx-gay` | XXX |
-| Lesbien | `xxx-lesbien` | XXX |
-| Trans | `xxx-trans` | XXX |
+| Hétéro | `h-t-ro` | XXX |
+| Gay | `gay` | XXX |
+| Lesbien | `lesbien` | XXX |
+| Trans | `trans` | XXX |
 | Autres | `autres` | Other/Misc |
 | Divers | `divers` | Other/Misc |
 
@@ -259,4 +260,4 @@ MIT - See [LICENSE](LICENSE)
 
 ---
 
-*Last updated: December 2025* 🏴‍☠️
+*Last updated: January 2026 (Final version - Repository archived)* 🏴‍☠️

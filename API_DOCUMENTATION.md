@@ -2,6 +2,9 @@
 
 This document describes the external API provided by La Cale tracker for integration with indexers like Prowlarr and Jackett.
 
+> [!WARNING]
+> **🚨 REPOSITORY ARCHIVED** - This repository is no longer maintained. The indexer is now officially available in [Prowlarr](https://github.com/Prowlarr/Prowlarr) and [Jackett](https://github.com/Jackett/Jackett).
+
 ## Base URL
 
 ```
